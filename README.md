@@ -24,3 +24,46 @@
 ["1234", "1567", "-2", "computer science"] -> ["-2"]
 
 ["Russia", "Denmark", "Kazan"] -> []
+
+
+## Решение задачи:
+
+Для решения задачи, необходимо написать программу, состоящую из двух методов. 
+
+В первом задаём два массива строк, первый из которых будет содержать строки с различной длиной (колличеством символов), а второй будет заполняться строками с длиной в 3 символа после соответствующей проверки:
+
+    void GetArray(string[] array1, string[] array2)
+
+    {
+
+        int count = 0;
+        for (int i = 0; i < array1.Length; i++)
+        {
+         if(array1[i].Length <= 3)
+            {
+                array2[count] = array1[i];
+                count++;
+            }
+        }
+    }
+
+Второй метод отвечает за вывод получившегося (второго) массива:
+
+    void PrintArray(string[] array1, string[] array2)
+    {
+        for (int i = 0; i < array2.Length; i++)
+        {
+            Console.Write($"{array2[i]}\t ");
+        }
+    }
+
+Необходимо задать эти два массива:
+
+    string[] matrix1 = new string[] {"hello", "2", "world", ":-)"};
+    string[] result1 = new string[matrix1.Length];.
+
+
+Вызываем методы следующим образом:
+
+    GetArray(matrix1, result1);
+    PrintArray(matrix1, result1);
